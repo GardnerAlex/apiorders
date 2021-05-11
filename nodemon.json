@@ -1,0 +1,10 @@
+{
+  "ignore": [
+    "test/**/*.*",
+    "test/*.js",
+    "test/*.ts"
+  ],
+  "watch": [
+    "src/*"
+  ]
+}

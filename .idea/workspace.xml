@@ -1,12 +1,248 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="78709b2b-3711-4ebb-b91f-0a62eecd21d2" name="Default Changelist" comment="1st working version with DB integration">
+      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nodemon.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/dbConnector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/dbConnector.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/dbConnector.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/dbConnectors/restOrders/restOrdersDbConnector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/dbConnectors/restOrders/restOrdersDbConnector.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/dbConnectors/restOrders/restOrdersDbConnector.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/dbInterfaces.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/dbInterfaces.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/dbInterfaces.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/index.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiMethods.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiMethods.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiMethods.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/apiOrdersServer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/apiOrdersServer.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/apiOrdersServer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/apiRequestProcessor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/apiRequestProcessor.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/apiRequestProcessor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/controllers/apiOrdersController.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/controllers/apiOrdersController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/controllers/apiOrdersController.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/controllers/apiOrdersController.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/sendMail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/sendMail.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/sendMail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/transformData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/transformData.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/transformData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/index.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/restApiInterfaces.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/restApiInterfaces.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/restApiInterfaces.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/restInterfaces.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/restInterfaces.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/restInterfaces.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/restServer.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/restServer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/restServer.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/restServer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/specs/smartMarketOpenApi/openapi.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/specs/smartMarketOpenApi/smartMarketOpenApi.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/specs/smartMarketOpenApi/smartMarketOpenApi_old.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApi/specs/smartMarketOpenApi/smartMarketOpenApi_old_last.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1sKv9dOamdaK1ASaHzAGSz30oca" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/restApi/apiOrders/controllers" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/restApi/apiOrders/helpers" />
+      <recent name="$PROJECT_DIR$/src/restApi/apiOrders/controllers" />
+      <recent name="$PROJECT_DIR$/src/restApi/apiOrders" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/restApi/apiOrders/controllers" />
+      <recent name="$PROJECT_DIR$/src/restApi" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.tmp.js">
+    <configuration name="tmp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/tmp.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="RestOrders" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="RestOrders" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="compile" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="compile" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint:ts" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint:ts" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.tmp.js" />
+        <item itemvalue="npm.RestOrders" />
+        <item itemvalue="npm.compile" />
+        <item itemvalue="npm.lint:ts" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="78709b2b-3711-4ebb-b91f-0a62eecd21d2" name="Default Changelist" comment="" />
+      <created>1620633945604</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620633945604</updated>
+      <workItem from="1620633948218" duration="24109000" />
+    </task>
+    <task id="LOCAL-00001" summary="initial setup and testing connection">
+      <created>1620634065367</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620634065367</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/restApi/index.js" />
+        <option value="$PROJECT_DIR$/src/restApi/index.js.map" />
+        <option value="$PROJECT_DIR$/src/restApi/apiOrders/apiOrdersServer.js" />
+        <option value="$PROJECT_DIR$/src/restApi/apiOrders/helpers/sendMail.js" />
+        <option value="$PROJECT_DIR$/src/restApi/apiOrders/helpers/sendMail.js.map" />
+        <option value="$PROJECT_DIR$/src/restApi/restInterfaces.js" />
+        <option value="$PROJECT_DIR$/src/db/dbInterfaces.js.map" />
+        <option value="$PROJECT_DIR$/src/db/dbInterfaces.js" />
+        <option value="$PROJECT_DIR$/src/restApi/apiOrders/apiOrdersServer.js.map" />
+        <option value="$PROJECT_DIR$/src/restApi/restInterfaces.js.map" />
+        <option value="$PROJECT_DIR$/src/restApi/apiMethods.js" />
+        <option value="$PROJECT_DIR$/src/restApi/apiMethods.js.map" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial setup and testing connection" />
+    <MESSAGE value="1st working version with DB integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="1st working version with DB integration" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-240" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620643300913">
+      <screen x="-240" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="-240" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620643300913" />
+    <state x="311" y="-911" key="CommitChangelistDialog2" timestamp="1620716390683">
+      <screen x="-240" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="311" y="-911" key="CommitChangelistDialog2/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716390683" />
+    <state width="1607" height="300" key="GridCell.Tab.0.bottom" timestamp="1620716390940">
+      <screen x="-240" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1367" height="300" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518506" />
+    <state width="1607" height="300" key="GridCell.Tab.0.bottom/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716390940" />
+    <state width="1607" height="300" key="GridCell.Tab.0.center" timestamp="1620716390939">
+      <screen x="-240" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1367" height="300" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518505" />
+    <state width="1607" height="300" key="GridCell.Tab.0.center/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716390939" />
+    <state width="1607" height="300" key="GridCell.Tab.0.left" timestamp="1620716390938">
+      <screen x="-240" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1367" height="300" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518505" />
+    <state width="1607" height="300" key="GridCell.Tab.0.left/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716390938" />
+    <state width="1607" height="300" key="GridCell.Tab.0.right" timestamp="1620716390940">
+      <screen x="-240" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1367" height="300" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518506" />
+    <state width="1607" height="300" key="GridCell.Tab.0.right/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716390940" />
+    <state x="229" y="-875" key="SettingsEditor" timestamp="1620657011017">
+      <screen x="-240" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="229" y="-875" key="SettingsEditor/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620657011017" />
+    <state x="320" y="-774" key="Vcs.Push.Dialog.v2" timestamp="1620634071551">
+      <screen x="-240" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="320" y="-774" key="Vcs.Push.Dialog.v2/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620634071551" />
+    <state x="401" y="-750" width="637" height="472" key="find.popup" timestamp="1620657373397">
+      <screen x="-240" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="401" y="-750" width="637" height="472" key="find.popup/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620657373397" />
+    <state x="385" y="-800" width="670" height="676" key="search.everywhere.popup" timestamp="1620640129096">
+      <screen x="-240" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="385" y="-800" width="670" height="676" key="search.everywhere.popup/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620640129096" />
   </component>
 </project>

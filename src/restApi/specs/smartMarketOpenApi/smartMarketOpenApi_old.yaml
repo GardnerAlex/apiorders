@@ -1,0 +1,978 @@
+openapi: 3.0.0
+info:
+  title: SmartMarket Pay API
+  description: API для приема платежей
+  contact:
+    email: berezkin.dv@gmail.com
+  version: 1.0.2
+servers:
+  - url: http://localhost:10100/smartpay/v1
+    description: SwaggerHub API Auto Mocking
+security:
+  - bearerAuth: []
+tags:
+  - name: payments
+    description: Платежные операции
+  - name: cards
+    description: Операции с карточными связками
+paths:
+  /invoices/{invoice_id}:
+    get:
+      tags:
+        - payments
+      summary: Получить данные по счету
+      description: |
+        Получить данные по счету. Вначале счет создается операцией POST invoices или POST cards, затем вызывается эта операция для получения данных счета и продолжения операции
+      operationId: get_invoice
+      parameters:
+        - name: invoice_id
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            description: ID счета
+            example: ad454ffg-6c54-4b01-90e6-d701748f0851
+      responses:
+        "200":
+          description: Статус счета, в зависимости от статуса варианты оплаты
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+              examples:
+                Выбор платежного инструмента:
+                  $ref: '#/components/examples/invoice_need_payment_instrument'
+                Счет оплачен:
+                  $ref: '#/components/examples/invoice_ok'
+                Требуется оплата:
+                  $ref: '#/components/examples/invoice_need_pay'
+        "400":
+          description: bad input parameter
+        "401":
+          description: Access token is missing or invalid
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+    put:
+      tags:
+        - payments
+      summary: Подтвердить/отменить оплату счета. Используется при двустадийных платежах.
+      description: |
+        Инициатор присылает подтверждение или отмену для завершения оплаты счета при двухстадийной оплате. Если подтверждено, происходит завершение оплаты, иначе происходит отмена. Счет должен находиться в состоянии 3 "Предавторизация". По завершении счет переходит в состояние 0 "Оплачен" или 6 "Отменен инициатором"
+      operationId: put_invoice
+      parameters:
+        - name: invoice_id
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            description: ID счета
+            example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      requestBody:
+        description: Инфо о подтверждении/отмене счета
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/invoice_consume'
+      responses:
+        "200":
+          description: Статус счета, в зависимости от статуса варианты оплаты
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+              examples:
+                Счет отменен:
+                  $ref: '#/components/examples/invoice_canceled'
+                Счет оплачен:
+                  $ref: '#/components/examples/invoice_ok'
+        "400":
+          description: bad input parameter
+        "401":
+          description: Access token is missing or invalid
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+      security:
+        - basicAuth: []
+    post:
+      tags:
+        - payments
+      summary: Обновить данные по счету
+      description: |
+        Обновить данные по счету. После создания счета клиент может указать платежный инструмент
+      operationId: upd_invoice
+      parameters:
+        - name: invoice_id
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            description: ID счета
+            example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      requestBody:
+        description: Инфо о платежном инструменте
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body'
+      responses:
+        "200":
+          description: Статус счета, в зависимости от статуса варианты оплаты
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "400":
+          description: bad input parameter
+        "401":
+          description: Access token is missing or invalid
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+  /invoices:
+    post:
+      tags:
+        - payments
+      summary: Создать счет на оплату
+      description: |
+        Создать счет на оплату для клиента.
+      operationId: create_invoice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_1'
+      responses:
+        "200":
+          description: Данные по счету
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "400":
+          description: bad input parameter
+        "401":
+          description: Access token is missing or invalid
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+      security:
+        - bearerAuth: []
+  /cardslist:
+    get:
+      tags:
+        - cards
+      summary: Получить список карт клиента
+      description: |
+        Получить список связок для клиента.
+      operationId: get_cards
+      responses:
+        "200":
+          description: Список карт клиента
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/card'
+        "400":
+          description: bad input parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+        "401":
+          description: Access token is missing or invalid
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+  /callback:
+    get:
+      security: []
+      tags:
+        - callback
+      summary: Callback from RBS
+      description: |
+        Получить список связок для клиента.
+      operationId: callback
+      responses:
+        "200":
+          description: Список карт клиента
+          content:
+            application/json:
+              schema:
+                type: string
+                description: Идентификатор счета
+                example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        "400":
+          description: bad input parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+        "401":
+          description: Access token is missing or invalid
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+  /cards:
+    post:
+      tags:
+        - cards
+      summary: Добавить банковскую карту клиента
+      description: "Добавить связку для банковской карты. Затем эту связку можно и\
+        спользовать для безакцептной оплаты. По факту это создание счета на оплату\
+        , например, 1 руб. для проверки валидности карты, после подтверждения опла\
+        ты счет автоматически удаляется. Это 1-я фаза создания счета, после этой о\
+        перации следует вызвать операцию Получить данные по счету GET /invoices/{invoice_id}\
+        \ \n"
+      operationId: add_card
+      responses:
+        "200":
+          description: Идентификатор счета
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/invoice_id'
+        "400":
+          description: bad input parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+        "401":
+          description: Access token is missing or invalid
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+  /cards/{card_id}:
+    get:
+      tags:
+        - cards
+      summary: Получить информацию о банковской карте
+      description: |
+        Получить полную информацию о карте.
+      operationId: get_card
+      parameters:
+        - name: card_id
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            description: ID карты
+            example: ad454ffg-6c54-4b01-90e6-d701748f0851
+      responses:
+        "200":
+          description: Инфо о карте
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_2'
+        "400":
+          description: bad input parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+        "401":
+          description: Access token is missing or invalid
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+    put:
+      tags:
+        - cards
+      summary: Обновить данные банковской карты
+      description: "Обновить данные о банковской карте. \n"
+      operationId: update_card
+      parameters:
+        - name: card_id
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            description: ID карты
+            example: ad454ffg-6c54-4b01-90e6-d701748f0851
+      requestBody:
+        description: Инфо о карте
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_2'
+      responses:
+        "204":
+          description: Успешно обновлено
+        "400":
+          description: bad input parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+        "401":
+          description: Access token is missing or invalid
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+    delete:
+      tags:
+        - cards
+      summary: Удалить банковскую карту
+      description: |
+        Удалить карту.
+      operationId: delete_card
+      parameters:
+        - name: card_id
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            description: ID карты
+            example: ad454ffg-6c54-4b01-90e6-d701748f0851
+      responses:
+        "204":
+          description: Карта успешно удалена
+        "400":
+          description: bad input parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+        "401":
+          description: Access token is missing or invalid
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+components:
+  schemas:
+    invoice_consume:
+      required:
+        - state
+      type: object
+      properties:
+        state:
+          type: integer
+          description: Состояние счета.| 0 - подтвержден 6 - отменен приложением после
+            оплаты
+          enum:
+            - 0
+            - 6
+    invoice_ptype:
+      type: object
+      properties:
+        ptype:
+          type: integer
+          description: |
+            Тип оплаты счета. 0 - одностадийная оплата 1 - двухстадийная оплата Если параметр не указан, формируется одностадийная оплата.
+          enum:
+            - 0
+            - 1
+    card:
+      required:
+        - card_id
+      type: object
+      properties:
+        card_id:
+          type: string
+          description: id карты
+          example: ad454ffg-6c54-4b01-90e6-d701748f0851
+        name:
+          type: string
+          description: Алиас карты, указанный клиентом
+          example: Главная
+        masked_pan:
+          type: string
+          description: Маскированный номер карты
+          example: 411111**1111
+        expiry_date:
+          type: string
+          description: Срок истечения действия карты в формате YYYYMM
+          example: "201912"
+        cardholder:
+          type: string
+          description: Имя держателя карты, указанное при оплате
+          example: Ivan Petrov
+        payment_system:
+          type: string
+          description: Наименование платёжной системы.
+          example: VISA
+        image:
+          type: string
+          description: Логотип карты.
+          format: url
+          example: https://www.sberbank.ru/portalserver/content/atom/adbb65af-4773-43ee-aaa9-8999c8d514e7/content?id=e589cf7a-d696-469e-aeb4-b63758e656c6&_=1543409814282
+        paysys:
+          type: string
+          description: Наименование платёжного оператора.
+          example: Эквайринг Сбербанка
+        paysys_image:
+          type: string
+          description: Логотип платёжного оператора.
+          format: url
+          example: https://www.sberbank.ru/common/img/uploaded/redirected/s_m_business/acquiring/assets/images/intro@2x.png
+      description: Основные данные банковской карты (связки)
+    bank_info:
+      type: object
+      properties:
+        bank_name:
+          type: string
+          description: Наименование банка-эмитента.
+          example: АКБ «Абсолют Банк» (ПАО)
+        bank_country_code:
+          type: string
+          description: Код страны банка-эмитента.
+          example: RU
+        bank_country_name:
+          type: string
+          description: Наименование страны банка-эмитента
+          example: Россия
+      description: Данные банка-эмитента
+    error1:
+      type: object
+      properties:
+        user_message:
+          type: string
+        error_description:
+          type: string
+        error_code:
+          type: integer
+    error:
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/error1'
+    base_response:
+      $ref: '#/components/schemas/error'
+    form_url:
+      type: object
+      properties:
+        form_url:
+          type: string
+          description: URL платежной формы, на который надо перенаправить браузер
+            клиента
+          example: https://3dsec.sberbank.ru/payment/merchants/test/payment_ru.html?mdOrder=70906e55-7114-41d6-8332-4609dc6590f4
+      description: Информация для оплаты счета
+    invoice_id:
+      required:
+        - invoice_id
+      type: object
+      properties:
+        invoice_id:
+          type: string
+          description: Идентификатор счета
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+    invoice:
+      type: object
+      properties:
+        invoice:
+          $ref: '#/components/schemas/invoice_invoice'
+    initiator:
+      type: object
+      properties:
+        app_id:
+          type: string
+          description: ID SmartApp-a. По нему определяются разрешения для приложения,
+            инициировавшего платеж
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        session_id:
+          type: string
+          description: ID сессии
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        channel:
+          type: string
+          description: канал
+          example: dongle3
+        device_id:
+          type: string
+          description: ID устройства
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      description: Инициатор заказа
+    invoice_ret:
+      allOf:
+        - $ref: '#/components/schemas/invoice_id'
+        - $ref: '#/components/schemas/invoice'
+        - $ref: '#/components/schemas/image'
+    payment_instruments:
+      type: object
+      properties:
+        cards:
+          type: array
+          items:
+            $ref: '#/components/schemas/card'
+        other_payment_instruments:
+          type: array
+          items:
+            $ref: '#/components/schemas/payment_instruments_other_payment_instruments'
+      description: Платежные инструменты
+    client:
+      type: object
+      properties:
+        client_id:
+          type: string
+          description: ID клиента
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      description: Клиент
+    client_contact:
+      type: object
+      properties:
+        email:
+          type: string
+          description: email клиента
+          example: qq@dd.eof
+        phone:
+          type: string
+          description: телефон клиента
+          example: "9123456789"
+        contact:
+          type: string
+          description: способ связи с покупателем
+          example: email
+      description: Клиент
+    participant:
+      required:
+        - orgID
+      type: object
+      properties:
+        org_id:
+          type: string
+          description: ID организации
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      description: Данные получателя
+    access_token:
+      required:
+        - token
+      type: object
+      properties:
+        token:
+          type: string
+          description: access token пользователя
+          example: eyJhbGciOiJIUzI1NiIsImtpZCI6NDMyNDMyNDMyfQ.eyJhdWQiOiI5OEE4MDY1RS03Qjg1LTQyRTQtODNERC00ODAwNTVEMUJDMEQiLCJjbGllbnRfaWQiOiJEQTUyNzhBQy1BMDdGLUMwMUEtQjJEMy1DMjMxREJCMkUyMEYiLCJzdWIiOiJEMDU1MjUwMUJGN0UwNEZFNUM2MDlENUNFRkE2Nzk5NiIsImlzcyI6Imh0dHBzOi8vb25saW5lLnNiZXJiYW5rLnJ1L0NTQUZyb250L2luZGV4LmRvIiwiZXhwIjoxNTE2NjI5NDMyLCJpYXQiOjE1MTY2Mjk0MDIsImp0aSI6IjI2RDg1RERCLUNFREItNEM3NS1CMjYxLUZEMEY4OUU5RDYxNCJ9.YCyafza5PLTU7JtOZkd78cw4V3-sR7w-OAsuGLb8DnE
+    delivery_info:
+      type: object
+      properties:
+        client:
+          $ref: '#/components/schemas/client'
+        address:
+          $ref: '#/components/schemas/address'
+        description:
+          type: string
+          description: Дополнительная информация по доставке
+          example: "Перезвонить за 1,5 часа \n"
+      description: Информация о доставке
+    address:
+      type: object
+      properties:
+        country:
+          type: string
+          description: Страна
+          example: RU
+        city:
+          type: string
+          description: Город
+          example: Москва
+        address:
+          type: string
+          description: Адрес
+          example: ул. Вавилова, 19, офис 1
+      description: Адрес
+    order:
+      required:
+        - amount
+        - order_id
+      type: object
+      properties:
+        order_id:
+          type: string
+          description: ID заказа в системе магазина
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        order_number:
+          type: string
+          description: Номер заказа в системе магазина, для клиента
+          example: "145"
+        order_date:
+          type: string
+          description: Дата заказа в системе магазина, [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
+          format: date-time
+        service_id:
+          type: string
+          description: ID сервиса (настраивается платежной системой и выдается пользователю
+            платежного сервиса)
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        amount:
+          type: string
+          description: Сумма платежа в копейках
+          example: "118360000"
+        currency:
+          type: string
+          description: Код валюты в [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+          example: RUB
+        purpose:
+          type: string
+          description: Краткое назначение платежа
+          example: Покупка внутриигрового контента
+        description:
+          type: string
+          description: Описание платежа для отображения клиенту или печати
+          example: Покупка внутриигрового контента в игре Маша и Медведь, салон красоты
+            Чародейка.
+        language:
+          type: string
+          description: Язык, текстовых полей, указанный с помощью [BCP 47](https://tools.ietf.org/rfc/bcp/bcp47.txt)
+            кодирования. (Например, "en-US" для английского языка, используемого в
+            США, "en-GB" для английского языка, используемого в Великобритании, и
+            т.д.)
+          example: ru-RU
+        expirationDate:
+          type: string
+          description: Дата и время окончания жизни счета, [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
+          format: date-time
+        order_bundle:
+          type: array
+          description: Состав заказа (элементы корзины)
+          items:
+            $ref: '#/components/schemas/bundle_param'
+      description: Данные заказа
+    params:
+      type: array
+      description: Доп. параметры заказа
+      items:
+        $ref: '#/components/schemas/param'
+    param:
+      required:
+        - key
+        - value
+      type: object
+      properties:
+        key:
+          type: string
+          description: Название параметра
+          example: packageName
+        value:
+          type: string
+          description: Значение параметра
+          example: com.MashaAndTheBear.HairSalon
+      description: Доп. параметр
+    bundle_param:
+      allOf:
+        - required:
+            - item_amount
+            - name
+            - position_id
+          type: object
+          properties:
+            position_id:
+              type: integer
+              description: Уникальный идентификатор товарной позиции внутри Корзины
+                Заказа
+              example: 1
+            name:
+              type: string
+              description: Наименование или описание товарной позиции в свободной форме
+              example: Кучка из 100 кристаллов для использования при нырянии
+            item_params:
+              $ref: '#/components/schemas/params'
+            quantity:
+              $ref: '#/components/schemas/quantity'
+            item_amount:
+              type: string
+              description: Сумма стоимости всех товарных позиций одного positionId в
+                деньгах в микроединицах валюты
+              example: "118360000"
+            currency:
+              type: string
+              description: Код валюты в [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+              example: RUB
+            item_code:
+              type: string
+              description: Номер (идентификатор) товарной позиции в системе магазина.
+                Параметр должен быть уникальным в рамках запроса.
+              example: com.MashaAndTheBear.HairSalon.crystal100
+          description: Доп. параметр
+        - $ref: '#/components/schemas/image'
+    image:
+      type: object
+      properties:
+        image:
+          type: string
+          description: Ссылка на картинку.
+          format: url
+          example: https://i-love-png.com/images/grim-reaper-icon.png
+      description: Ссылка на картинку.
+    quantity:
+      required:
+        - measure
+        - value
+      type: object
+      properties:
+        value:
+          type: string
+          description: Количество товарных позиций данного positionId. Для указания
+            дробных чисел используйте десятичную точку.
+          example: "1"
+        measure:
+          type: string
+          description: Мера измерения количества товарной позиции
+          example: шт.
+      description: Описание общего количества товарных позиций одного positionId и
+        их меру измерения.
+    inline_response_200:
+      allOf:
+        - $ref: '#/components/schemas/error'
+      anyOf:
+        - $ref: '#/components/schemas/invoice_ret'
+        - $ref: '#/components/schemas/payment_instruments'
+        - $ref: '#/components/schemas/form_url'
+    inline_response_200_1:
+      allOf:
+        - $ref: '#/components/schemas/error'
+      anyOf:
+        - $ref: '#/components/schemas/invoice_id'
+    body:
+      required:
+        - code
+      type: object
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          description: Код инструмента
+          example: card
+          enum:
+            - card
+            - QR
+            - new
+        value:
+          type: string
+          description: Значение параметра, например, id карты
+          example: ad454ffg-6c54-4b01-90e6-d701748f0851
+      description: Выбранный инструмент
+    body_1:
+      allOf:
+        - $ref: '#/components/schemas/delivery_info'
+        - $ref: '#/components/schemas/invoice_ptype'
+        - $ref: '#/components/schemas/invoice'
+    inline_response_200_2:
+      allOf:
+        - $ref: '#/components/schemas/card'
+        - type: object
+          properties:
+            bank_info:
+              $ref: '#/components/schemas/bank_info'
+          description: Дополнительные данные банковской карты (связки)
+    body_2:
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          type: string
+          description: Алиас карты, указанный клиентом
+          example: Самая главная
+      description: Данные банковской карты для изменения
+    invoice_invoice:
+      required:
+        - order
+      type: object
+      properties:
+        payer:
+          description: Плательщик
+          allOf:
+            - $ref: '#/components/schemas/client'
+            - $ref: '#/components/schemas/client_contact'
+        invoice_params:
+          $ref: '#/components/schemas/params'
+        order:
+          $ref: '#/components/schemas/order'
+      description: Выставленный счет
+    payment_instruments_other_payment_instruments:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Название
+          example: Показать QR-код
+        code:
+          type: string
+          description: Код
+          example: QR
+      description: Другие варианты оплаты
+  responses:
+    unauthorized_error:
+      description: Access token is missing or invalid
+  examples:
+    invoice_ok:
+      value:
+        invoice_id: d290f1ee-6c54-4b01-90e6-d701748f0851
+        error:
+          user_message: Счет оплачен
+          error_description: error_description
+          error_code: 0
+    invoice_canceled:
+      value:
+        invoice_id: d290f1ee-6c54-4b01-90e6-d701748f0851
+        error:
+          user_message: Счет отменен
+          error_description: error_description
+          error_code: 6
+    invoice_need_payment_instrument:
+      value:
+        invoice_id: d290f1ee-6c54-4b01-90e6-d701748f0851
+        error:
+          user_message: Требуется выбор платежного инструмента
+          error_description: error_description
+          error_code: 2
+        cards:
+          - card_id: ad454ffg-6c54-4b01-90e6-d701748f0851
+            name: Основная
+            masked_pan: 411111**1111
+            expiry_date: "201912"
+            cardholder: Ivan Petrov
+            payment_system: VISA
+            image: https://www.sberbank.ru/portalserver/content/atom/adbb65af-4773-43ee-aaa9-8999c8d514e7/content?id=d2515794-e817-4d68-a8f6-7d591e35e70d&_=1543500148511
+            paysys: Эквайринг Сбербанка
+            paysys_image: https://www.sberbank.ru/common/img/uploaded/redirected/s_m_business/acquiring/assets/images/intro@2x.png
+          - card_id: 67344ffg-6c54-4b01-90e6-d701748fddea
+            name: Дополнительная
+            masked_pan: 521111**5252
+            expiry_date: "201912"
+            cardholder: Ivan Petrov
+            payment_system: MasterCard
+            image: https://www.sberbank.ru/portalserver/content/atom/adbb65af-4773-43ee-aaa9-8999c8d514e7/content?id=566e0013-bbfa-4468-8edc-d71bcdeb0ab5&_=1572507346703
+            paysys: Эквайринг Сбербанка
+            paysys_image: https://www.sberbank.ru/common/img/uploaded/redirected/s_m_business/acquiring/assets/images/intro@2x.png
+          - card_id: ffffffff-ffff-ffff-ffff-ffffffffffff
+            name: Новая
+            paysys: Эквайринг Сбербанка
+            paysys_image: https://www.sberbank.ru/common/img/uploaded/redirected/s_m_business/acquiring/assets/images/intro@2x.png
+    invoice_need_pay:
+      value:
+        invoice_id: d290f1ee-6c54-4b01-90e6-d701748f0851
+        error:
+          user_message: Требуется оплата
+          error_description: error_description
+          error_code: 1
+        form_url: https://3dsec.sberbank.ru/payment/merchants/test/payment_ru.html?mdOrder=70906e55-7114-41d6-8332-4609dc6590f4
+    form_url:
+      value:
+        form_url: https://3dsec.sberbank.ru/payment/merchants/test/payment_ru.html?mdOrder=70906e55-7114-41d6-8332-4609dc6590f4
+    invoice_id:
+      value:
+        invoice_id: d290f1ee-6c54-4b01-90e6-d701748f0851
+    invoice:
+      value:
+        invoice:
+          payer:
+            client_id: d290f1ee-6c54-4b01-90e6-d701748f0851
+            email: qq@dd.eof
+            phone: 9123456789
+            contact: email
+          invoice_params:
+            - key: packageName
+              value: com.MashaAndTheBear.HairSalon
+          order:
+            order_id: d290f1ee-6c54-4b01-90e6-d701748f0851
+            order_number: 145
+            order_date: 2018-07-16T19:00:30.45Z+3
+            service_id: d290f1ee-6c54-4b01-90e6-d701748f0851
+            amount: 118360000
+            currency: RUB
+            purpose: Покупка внутриигрового контента
+            description: Покупка внутриигрового контента в игре Маша и Медведь, салон
+              красоты Чародейка.
+            language: ru-RU
+            expirationDate: 2020-01-23T15:58:01.032Z
+            order_bundle:
+              - position_id: 1
+                name: Кучка из 100 кристаллов для использования при нырянии
+                item_params:
+                  - key: packageName
+                    value: com.MashaAndTheBear.HairSalon
+                quantity:
+                  value: 1
+                  measure: шт.
+                item_amount: 118360000
+                currency: RUB
+                item_code: com.MashaAndTheBear.HairSalon.crystal100
+    error_example:
+      value:
+        success: true
+        errors:
+          error:
+            user_message: Требуется выбор платежного инструмента клиентом
+            error_description: error_description
+            error_code: 2
+    payment_instruments:
+      value:
+        cards:
+          - card_id: ad454ffg-6c54-4b01-90e6-d701748f0851
+            name: Основная
+            masked_pan: 411111**1111
+            expiry_date: "201912"
+            cardholder: Ivan Petrov
+            payment_system: VISA
+            image: https://www.sberbank.ru/portalserver/content/atom/adbb65af-4773-43ee-aaa9-8999c8d514e7/content?id=d2515794-e817-4d68-a8f6-7d591e35e70d&_=1543500148511
+            paysys: Эквайринг Сбербанка
+            paysys_image: https://www.sberbank.ru/common/img/uploaded/redirected/s_m_business/acquiring/assets/images/intro@2x.png
+          - card_id: 67344ffg-6c54-4b01-90e6-d701748fddea
+            name: Дополнительная
+            masked_pan: 521111**5252
+            expiry_date: "201912"
+            cardholder: Ivan Petrov
+            payment_system: MasterCard
+            image: https://www.sberbank.ru/portalserver/content/atom/adbb65af-4773-43ee-aaa9-8999c8d514e7/content?id=566e0013-bbfa-4468-8edc-d71bcdeb0ab5&_=1572507346703
+            paysys: Эквайринг Сбербанка
+            paysys_image: https://www.sberbank.ru/common/img/uploaded/redirected/s_m_business/acquiring/assets/images/intro@2x.png
+          - card_id: ffffffff-ffff-ffff-ffff-ffffffffffff
+            name: Новая
+            paysys: Эквайринг Сбербанка
+            paysys_image: https://www.sberbank.ru/common/img/uploaded/redirected/s_m_business/acquiring/assets/images/intro@2x.png
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
