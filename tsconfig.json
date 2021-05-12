@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+//    "declaration": true,
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "types": [
+      "node",
+      "jest"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "*": ["*", "dist/*"]
+    }
+  },
+  "include": [
+    "./src",
+    "./test",
+    "./src/errorCodesLib/*.ts",
+    "src/**/*.ts",
+    "src/*.ts",
+    "src/restApi/sowaLocal/*.ts",
+    "/src/providerGateway/*",
+    "/src/coreServices/*",
+    "/src/db/*",
+    "./test/**/*.ts",
+    "./test/testProcessors/**/*.ts",
+    "./test/testConstantsAndData/**/*.ts",
+    "/test/**/*.ts",
+    "test/dbAdapter/*.ts",
+    "*.ts"
+  ],
+
+  "exclude": [
+    "node_modules",
+    "src/old/**/*",
+    "src/testTs.ts"
+  ]
+}
