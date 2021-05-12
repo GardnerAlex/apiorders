@@ -57,14 +57,11 @@
       <recent name="$PROJECT_DIR$/src/restApi" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.RestOrders">
+  <component name="RunManager" selected="npm.RestOrdersDev">
     <configuration name="apiOrdersServer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/dist/restApi/apiOrders/apiOrdersServer.js" working-dir="$PROJECT_DIR$/dist/restApi/apiOrders">
       <method v="2" />
     </configuration>
     <configuration name="restServer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/dist/restApi/restServer.js" working-dir="$PROJECT_DIR$/dist/restApi">
-      <method v="2" />
-    </configuration>
-    <configuration name="tmp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/tmp.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="RestOrders" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -72,6 +69,16 @@
       <command value="run" />
       <scripts>
         <script value="RestOrders" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="RestOrdersDev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="RestOrdersDev" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -89,11 +96,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.RestOrdersDev" />
         <item itemvalue="npm.RestOrders" />
         <item itemvalue="Node.js.apiOrdersServer.js" />
         <item itemvalue="npm.compile" />
         <item itemvalue="Node.js.restServer.js" />
-        <item itemvalue="Node.js.tmp.js" />
       </list>
     </recent_temporary>
   </component>
@@ -108,7 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620633945604</updated>
       <workItem from="1620633948218" duration="24264000" />
-      <workItem from="1620845218842" duration="3991000" />
+      <workItem from="1620845218842" duration="4285000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup and testing connection">
       <created>1620634065367</created>
@@ -152,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620850100049</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add tsconfig.json">
+      <created>1620850138938</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620850138938</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,43 +200,43 @@
       <screen x="-240" y="-1057" width="1920" height="1057" />
     </state>
     <state x="-240" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620643300913" />
-    <state x="333" y="-911" key="CommitChangelistDialog2" timestamp="1620850099965">
+    <state x="333" y="-911" key="CommitChangelistDialog2" timestamp="1620850138864">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="333" y="-911" key="CommitChangelistDialog2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620850099965" />
+    <state x="333" y="-911" key="CommitChangelistDialog2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620850138864" />
     <state x="311" y="-911" key="CommitChangelistDialog2/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716496314" />
-    <state width="1556" height="300" key="GridCell.Tab.0.bottom" timestamp="1620849899502">
+    <state width="1532" height="300" key="GridCell.Tab.0.bottom" timestamp="1620850413601">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1556" height="300" key="GridCell.Tab.0.bottom/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620849899502" />
+    <state width="1532" height="300" key="GridCell.Tab.0.bottom/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620850413601" />
     <state width="1367" height="300" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518506" />
     <state width="1367" height="300" key="GridCell.Tab.0.bottom/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716635423" />
-    <state width="1556" height="300" key="GridCell.Tab.0.center" timestamp="1620849899500">
+    <state width="1532" height="300" key="GridCell.Tab.0.center" timestamp="1620850413600">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1556" height="300" key="GridCell.Tab.0.center/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620849899500" />
+    <state width="1532" height="300" key="GridCell.Tab.0.center/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620850413600" />
     <state width="1367" height="300" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518505" />
     <state width="1367" height="300" key="GridCell.Tab.0.center/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716635422" />
-    <state width="1556" height="300" key="GridCell.Tab.0.left" timestamp="1620849899500">
+    <state width="1532" height="300" key="GridCell.Tab.0.left" timestamp="1620850413599">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1556" height="300" key="GridCell.Tab.0.left/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620849899500" />
+    <state width="1532" height="300" key="GridCell.Tab.0.left/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620850413599" />
     <state width="1367" height="300" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518505" />
     <state width="1367" height="300" key="GridCell.Tab.0.left/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716635421" />
-    <state width="1556" height="300" key="GridCell.Tab.0.right" timestamp="1620849899501">
+    <state width="1532" height="300" key="GridCell.Tab.0.right" timestamp="1620850413601">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1556" height="300" key="GridCell.Tab.0.right/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620849899501" />
+    <state width="1532" height="300" key="GridCell.Tab.0.right/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620850413601" />
     <state width="1367" height="300" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518506" />
     <state width="1367" height="300" key="GridCell.Tab.0.right/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716635422" />
     <state x="229" y="-875" key="SettingsEditor" timestamp="1620657011017">
       <screen x="-240" y="-1057" width="1920" height="1057" />
     </state>
     <state x="229" y="-875" key="SettingsEditor/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620657011017" />
-    <state x="400" y="-774" key="Vcs.Push.Dialog.v2" timestamp="1620850101327">
+    <state x="400" y="-774" key="Vcs.Push.Dialog.v2" timestamp="1620850140868">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="400" y="-774" key="Vcs.Push.Dialog.v2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620850101327" />
+    <state x="400" y="-774" key="Vcs.Push.Dialog.v2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620850140868" />
     <state x="320" y="-774" key="Vcs.Push.Dialog.v2/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716499339" />
     <state x="401" y="-750" width="637" height="472" key="find.popup" timestamp="1620657373397">
       <screen x="-240" y="-1057" width="1920" height="1057" />

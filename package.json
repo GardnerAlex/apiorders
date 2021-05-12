@@ -11,7 +11,8 @@
   "scripts": {
     "lint:ts": "npx eslint --ext ts ./src --fix",
     "compile": "tsc -w",
-    "RestOrders": "nodemon src/restApi/apiOrders/apiOrdersServer.js"
+    "RestOrdersDev": "nodemon dist/restApi/apiOrders/apiOrdersServer.js",
+    "RestOrders": "node dist/restApi/apiOrders/apiOrdersServer.js"
   },
   "author": "Alexander Gardner",
   "license": "MIT",
