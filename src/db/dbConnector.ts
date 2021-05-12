@@ -1,16 +1,21 @@
 import { DbConnOptions } from './dbInterfaces';
 
 const { Pool } = require('pg');
-const utils = require('../utils.js');
+const utils = require('../utils');
 
 const dbOptions: DbConnOptions = { database: '', host: '', password: '', port: '', user: '', connectionTimeoutMillis: 1000, idleTimeoutMillis: 100, max: 15 };
-dbOptions.user = utils.getEnv('DB_USER');
-dbOptions.password = utils.getEnv('DB_PASSWORD');
-dbOptions.host = utils.getEnv('DB_HOST');
-dbOptions.database = utils.getEnv('DB_NAME');
-dbOptions.port = utils.getEnv('DB_PORT');
+let dbSuffix = '';
+if (utils.getEnv('DB_RUN_LOCALLY') === 'true') {
+  dbSuffix = '_LOCAL';
+}
+dbOptions.user = utils.getEnv(`DB_USER${dbSuffix}`);
+dbOptions.password = utils.getEnv(`DB_PASSWORD${dbSuffix}`);
+dbOptions.host = utils.getEnv(`DB_HOST${dbSuffix}`);
+dbOptions.database = utils.getEnv(`DB_NAME${dbSuffix}`);
+dbOptions.port = utils.getEnv(`DB_PORT${dbSuffix}`);
 dbOptions.max = Number.parseInt(utils.getEnv('MAX_DB_CONNECTIONS'), 10);
 dbOptions.idleTimeoutMillis = Number.parseInt(utils.getEnv('DB_IDLE_TIMEOUT_MS'), 10);
+
 
 if ((utils.getEnv('DB_SSL')) === 'true') {
   dbOptions.ssl = {
