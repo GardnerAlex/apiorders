@@ -52,7 +52,11 @@ async function sendToOperatorAndReplyToCustomer(fixedRawBody: RestOrderInterface
 export async function processApiRequest(request, response, nextStep, apiMethodName, apiMethodGroup): Promise<void> {
   try {
     // const rawBody = request.body.toString('utf8');
-    // console.log('+++', request.rawBody.toString());
+    console.log('request.headers.authorization1112', request.headers.authorization);
+    if (request.headers.authorization.indexOf('eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlkOWQyN2Vl') === -1) {
+      // nextStep();
+      return null;
+    }
     const fixedRawBody: RestOrderInterface = transformData(request.rawBody.toString());
     console.log('fixedrawBody', fixedRawBody);
     const params: ApiRequest = {
