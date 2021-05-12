@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="78709b2b-3711-4ebb-b91f-0a62eecd21d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620633945604</updated>
       <workItem from="1620633948218" duration="24264000" />
-      <workItem from="1620845218842" duration="3774000" />
+      <workItem from="1620845218842" duration="3952000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup and testing connection">
       <created>1620634065367</created>
@@ -139,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620849795860</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add tsconfig.json">
+      <created>1620849922853</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620849922853</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,10 +179,10 @@
       <screen x="-240" y="-1057" width="1920" height="1057" />
     </state>
     <state x="-240" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620643300913" />
-    <state x="333" y="-911" key="CommitChangelistDialog2" timestamp="1620849795768">
+    <state x="333" y="-911" key="CommitChangelistDialog2" timestamp="1620849922720">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="333" y="-911" key="CommitChangelistDialog2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620849795768" />
+    <state x="333" y="-911" key="CommitChangelistDialog2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620849922720" />
     <state x="311" y="-911" key="CommitChangelistDialog2/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716496314" />
     <state width="1556" height="300" key="GridCell.Tab.0.bottom" timestamp="1620849899502">
       <screen x="-160" y="-1057" width="1920" height="1057" />
@@ -206,10 +212,10 @@
       <screen x="-240" y="-1057" width="1920" height="1057" />
     </state>
     <state x="229" y="-875" key="SettingsEditor/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620657011017" />
-    <state x="400" y="-774" key="Vcs.Push.Dialog.v2" timestamp="1620849797764">
+    <state x="400" y="-774" key="Vcs.Push.Dialog.v2" timestamp="1620849924988">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="400" y="-774" key="Vcs.Push.Dialog.v2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620849797764" />
+    <state x="400" y="-774" key="Vcs.Push.Dialog.v2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620849924988" />
     <state x="320" y="-774" key="Vcs.Push.Dialog.v2/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716499339" />
     <state x="401" y="-750" width="637" height="472" key="find.popup" timestamp="1620657373397">
       <screen x="-240" y="-1057" width="1920" height="1057" />

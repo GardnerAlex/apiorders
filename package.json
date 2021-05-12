@@ -10,9 +10,7 @@
   },
   "scripts": {
     "lint:ts": "npx eslint --ext ts ./src --fix",
-    "compile": "tsc -w",
-    "RestOrdersDev": "nodemon src/restApi/apiOrders/apiOrdersServer.js",
-    "RestOrders": "node dist/restApi/apiOrders/apiOrdersServer.js"
+    "compile": "tsc -w"
   },
   "author": "Alexander Gardner",
   "license": "MIT",
