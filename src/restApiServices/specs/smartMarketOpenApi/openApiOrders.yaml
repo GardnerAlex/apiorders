@@ -1,0 +1,118 @@
+openapi: 3.0.0
+info:
+  title: StartUpCRM API
+  description: API для приема и обработки заказов
+  version: 0.0.1
+
+servers:
+  - url: http://localhost:21100/
+    description: SwaggerHub API
+
+paths:
+  /orders/placeorder:
+    post:
+      tags:
+        - placeorder
+      summary: Создать заказ
+      description: |
+        Создать заказ для клиента.
+      operationId: placeOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/placeorder'
+      responses:
+        "200":
+          description: Идентификатор созданного счета
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+        "400":
+          description: bad input parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+        "401":
+          description: Access token is missing or invalid
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base_response'
+
+components:
+  schemas:
+    openorder:
+      type: object
+      properties:
+        orders_user_id:
+          type: integer
+        name:
+          type: string
+        purchase_name:
+          type: string
+        "id":
+          type: integer
+        "city":
+          type: string
+        "street":
+          type: string
+        "building":
+          type: string
+        "flat":
+          type: string
+        "deliverydate":
+          type: string
+        "created_at":
+          type: string
+        "status":
+          type: integer
+    error1:
+      type: object
+      properties:
+        message:
+          type: string
+        description:
+          type: string
+        code:
+          type: integer
+    error:
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/error1'
+    base_response:
+      $ref: '#/components/schemas/error'
+    placeorder:
+      type: object
+      properties:
+        "name":
+          type: string
+        "surName":
+          type: string
+        "lastName":
+          type: string
+        "purchaseName":
+          type: string
+        "city":
+          type: string
+        "street":
+          type: string
+        "building":
+          type: string
+        "flat":
+          type: string
+        "phone":
+          type: string
+        "deliveryDate":
+          type: string
+        "email":
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic

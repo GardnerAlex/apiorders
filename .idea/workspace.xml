@@ -2,9 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78709b2b-3711-4ebb-b91f-0a62eecd21d2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorMethods.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorReqhandler.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/controllers/apiOperatorController.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/dbServiceApiOperator/dbConnectors/restOperator/operatorDbMethods.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/dbServiceApiOperator/dbOperatorInterfaces.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/dbServiceApiOperator/dbOperatorQuery.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/apiOrdersServer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/dbServiceApiOrders/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApiServices/specs/smartMarketOpenApi/openApiOperator.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/restApiServices/specs/smartMarketOpenApi/openApiOrders.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nodemon.json" beforeDir="false" afterPath="$PROJECT_DIR$/nodemon.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/apiRequestProcessor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApi/apiOrders/apiRequestProcessor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecosystem.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/ecosystem.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/dbConnector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/dbConnector.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/dbConnector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/dbServiceApiOrders/dbOrdersQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/dbConnectors/restOrders/restOrdersDbConnector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/dbConnectors/restOrders/restOrdersDbConnector.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/dbConnectors/restOrders/restOrdersDbConnector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/dbServiceApiOrders/dbConnectors/restOrders/ordersDbMethods.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/dbInterfaces.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/dbInterfaces.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/dbInterfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/dbServiceApiOrders/dbOrdersInterfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/dbServiceApiOperator/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiMethods.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiMethods.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiMethods.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/apiOrdersMethods.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/apiOrdersServer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/apiOrdersServer.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/apiOrdersServer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/apiRequestProcessor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/apiRequestProcessor.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/apiRequestProcessor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/apiOrdersReqHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/controllers/apiOrdersController.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/controllers/apiOrdersController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/controllers/apiOrdersController.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/controllers/apiOrdersController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/controllers/apiOrdersController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/sendMail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/sendMail.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/sendMail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/helpers/sendMail.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/transformData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/transformData.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/apiOrders/helpers/transformData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/helpers/transformData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/restApiInterfaces.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/restApiInterfaces.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/restApiInterfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorInterfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/restInterfaces.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/restInterfaces.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/restInterfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/apiOrdersInterfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/restServer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/restServer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/restServer.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/restServer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorServer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/specs/smartMarketOpenApi/openapi.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/specs/smartMarketOpenApi/openapi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/specs/smartMarketOpenApi/smartMarketOpenApi.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/specs/smartMarketOpenApi/smartMarketOpenApi_old.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/specs/smartMarketOpenApi/smartMarketOpenApi_old.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApi/specs/smartMarketOpenApi/smartMarketOpenApi_old_last.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/specs/smartMarketOpenApi/smartMarketOpenApi_old_last.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +97,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/restApi/apiOrders/controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/restApiServices/specs/smartMarketOpenApi" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -48,21 +110,33 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/restApi/apiOrders/helpers" />
-      <recent name="$PROJECT_DIR$/src/restApi/apiOrders/controllers" />
-      <recent name="$PROJECT_DIR$/src/restApi/apiOrders" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/restApi/apiOrders/controllers" />
-      <recent name="$PROJECT_DIR$/src/restApi" />
+      <recent name="$PROJECT_DIR$/src/restApiServices/specs/smartMarketOpenApi" />
+      <recent name="$PROJECT_DIR$/src/restApiServices/apiOperator" />
+      <recent name="$PROJECT_DIR$/src/restApiServices/apiOrders" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/db/dbConnectors" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/restApiServices/apiOperator" />
+      <recent name="$PROJECT_DIR$/src/restApiServices/apiOrders" />
+      <recent name="$PROJECT_DIR$/src/restApi/apiOrders" />
+      <recent name="$PROJECT_DIR$/src/restApi/apiOperator" />
+      <recent name="$PROJECT_DIR$/src/restApi/apiOrders/helpers" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.RestOrdersDev">
+  <component name="RunManager" selected="npm.RestOperatorDev">
     <configuration name="apiOrdersServer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/dist/restApi/apiOrders/apiOrdersServer.js" working-dir="$PROJECT_DIR$/dist/restApi/apiOrders">
       <method v="2" />
     </configuration>
-    <configuration name="restServer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/dist/restApi/restServer.js" working-dir="$PROJECT_DIR$/dist/restApi">
+    <configuration name="RestOperatorDev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="RestOperatorDev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="RestOrders" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -98,10 +172,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.RestOrdersDev" />
+        <item itemvalue="npm.RestOperatorDev" />
+        <item itemvalue="npm.compile" />
         <item itemvalue="npm.RestOrders" />
         <item itemvalue="Node.js.apiOrdersServer.js" />
-        <item itemvalue="npm.compile" />
-        <item itemvalue="Node.js.restServer.js" />
       </list>
     </recent_temporary>
   </component>
@@ -116,7 +190,10 @@
       <option name="presentableId" value="Default" />
       <updated>1620633945604</updated>
       <workItem from="1620633948218" duration="24264000" />
-      <workItem from="1620845218842" duration="5617000" />
+      <workItem from="1620845218842" duration="6031000" />
+      <workItem from="1620933777603" duration="6639000" />
+      <workItem from="1620980468473" duration="3768000" />
+      <workItem from="1620991523033" duration="6237000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup and testing connection">
       <created>1620634065367</created>
@@ -174,85 +251,88 @@
       <option name="project" value="LOCAL" />
       <updated>1620850435188</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added token validation">
+      <created>1620852778122</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1620852778122</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/src/restApi/index.js" />
-        <option value="$PROJECT_DIR$/src/restApi/index.js.map" />
-        <option value="$PROJECT_DIR$/src/restApi/apiOrders/apiOrdersServer.js" />
-        <option value="$PROJECT_DIR$/src/restApi/apiOrders/helpers/sendMail.js" />
-        <option value="$PROJECT_DIR$/src/restApi/apiOrders/helpers/sendMail.js.map" />
-        <option value="$PROJECT_DIR$/src/restApi/restInterfaces.js" />
-        <option value="$PROJECT_DIR$/src/db/dbInterfaces.js.map" />
-        <option value="$PROJECT_DIR$/src/db/dbInterfaces.js" />
-        <option value="$PROJECT_DIR$/src/restApi/apiOrders/apiOrdersServer.js.map" />
-        <option value="$PROJECT_DIR$/src/restApi/restInterfaces.js.map" />
-        <option value="$PROJECT_DIR$/src/restApi/apiMethods.js" />
-        <option value="$PROJECT_DIR$/src/restApi/apiMethods.js.map" />
-      </list>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial setup and testing connection" />
     <MESSAGE value="1st working version with DB integration" />
     <MESSAGE value="added env variable to switch between local and remote DB server, added different typescript compile dir" />
     <MESSAGE value="add tsconfig.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tsconfig.json" />
+    <MESSAGE value="added token validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added token validation" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-240" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620643300913">
-      <screen x="-240" y="-1057" width="1920" height="1057" />
+    <state x="-160" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620935544188">
+      <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="-160" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620935544188" />
     <state x="-240" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620643300913" />
-    <state x="333" y="-911" key="CommitChangelistDialog2" timestamp="1620850435111">
+    <state x="538" y="-782" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620981978233">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="333" y="-911" key="CommitChangelistDialog2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620850435111" />
+    <state x="538" y="-782" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620981978233" />
+    <state x="333" y="-911" key="CommitChangelistDialog2" timestamp="1620852778010">
+      <screen x="-160" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="333" y="-911" key="CommitChangelistDialog2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620852778010" />
     <state x="311" y="-911" key="CommitChangelistDialog2/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716496314" />
-    <state width="1532" height="300" key="GridCell.Tab.0.bottom" timestamp="1620852598737">
+    <state x="-60" y="-950" width="1720" height="827" key="DiffContextDialog" timestamp="1620935966636">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1532" height="300" key="GridCell.Tab.0.bottom/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620852598737" />
+    <state x="-60" y="-950" width="1720" height="827" key="DiffContextDialog/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620935966636" />
+    <state width="1541" height="300" key="GridCell.Tab.0.bottom" timestamp="1620998039637">
+      <screen x="-160" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1541" height="300" key="GridCell.Tab.0.bottom/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620998039637" />
     <state width="1367" height="300" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518506" />
     <state width="1367" height="300" key="GridCell.Tab.0.bottom/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716635423" />
-    <state width="1532" height="300" key="GridCell.Tab.0.center" timestamp="1620852598736">
+    <state width="1541" height="300" key="GridCell.Tab.0.center" timestamp="1620998039636">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1532" height="300" key="GridCell.Tab.0.center/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620852598736" />
+    <state width="1541" height="300" key="GridCell.Tab.0.center/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620998039636" />
     <state width="1367" height="300" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518505" />
     <state width="1367" height="300" key="GridCell.Tab.0.center/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716635422" />
-    <state width="1532" height="300" key="GridCell.Tab.0.left" timestamp="1620852598735">
+    <state width="1541" height="300" key="GridCell.Tab.0.left" timestamp="1620998039635">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1532" height="300" key="GridCell.Tab.0.left/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620852598735" />
+    <state width="1541" height="300" key="GridCell.Tab.0.left/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620998039635" />
     <state width="1367" height="300" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518505" />
     <state width="1367" height="300" key="GridCell.Tab.0.left/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716635421" />
-    <state width="1532" height="300" key="GridCell.Tab.0.right" timestamp="1620852598736">
+    <state width="1541" height="300" key="GridCell.Tab.0.right" timestamp="1620998039636">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1532" height="300" key="GridCell.Tab.0.right/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620852598736" />
+    <state width="1541" height="300" key="GridCell.Tab.0.right/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620998039636" />
     <state width="1367" height="300" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1620679518506" />
     <state width="1367" height="300" key="GridCell.Tab.0.right/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716635422" />
     <state x="229" y="-875" key="SettingsEditor" timestamp="1620657011017">
       <screen x="-240" y="-1057" width="1920" height="1057" />
     </state>
     <state x="229" y="-875" key="SettingsEditor/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620657011017" />
-    <state x="400" y="-774" key="Vcs.Push.Dialog.v2" timestamp="1620850436450">
+    <state x="400" y="-774" key="Vcs.Push.Dialog.v2" timestamp="1620852779987">
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="400" y="-774" key="Vcs.Push.Dialog.v2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620850436450" />
+    <state x="400" y="-774" key="Vcs.Push.Dialog.v2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620852779987" />
     <state x="320" y="-774" key="Vcs.Push.Dialog.v2/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716499339" />
-    <state x="401" y="-750" width="637" height="472" key="find.popup" timestamp="1620657373397">
-      <screen x="-240" y="-1057" width="1920" height="1057" />
+    <state x="481" y="-888" width="637" height="610" key="find.popup" timestamp="1620981955606">
+      <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="481" y="-888" width="637" height="610" key="find.popup/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620981955606" />
     <state x="401" y="-750" width="637" height="472" key="find.popup/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620657373397" />
-    <state x="385" y="-800" width="670" height="676" key="search.everywhere.popup" timestamp="1620640129096">
-      <screen x="-240" y="-1057" width="1920" height="1057" />
+    <state x="465" y="-800" width="670" height="676" key="search.everywhere.popup" timestamp="1620992341237">
+      <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="465" y="-800" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620992341237" />
     <state x="385" y="-800" width="670" height="676" key="search.everywhere.popup/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620640129096" />
   </component>
 </project>

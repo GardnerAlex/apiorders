@@ -7,14 +7,14 @@
     "noImplicitAny": false,
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "dist/restApiServices",
     "types": [
       "node",
       "jest"
     ],
     "baseUrl": ".",
     "paths": {
-      "*": ["*", "dist/*"]
+      "src/restApiServices": ["*", "dist/*"]
     }
   },
   "include": [
@@ -23,10 +23,10 @@
     "./src/errorCodesLib/*.ts",
     "src/**/*.ts",
     "src/*.ts",
-    "src/restApi/sowaLocal/*.ts",
+    "src/restApiServices/sowaLocal/*.ts",
     "/src/providerGateway/*",
     "/src/coreServices/*",
-    "/src/db/*",
+    "/src/restApiServices/apiOrders/dbServiceApiOrders/*",
     "./test/**/*.ts",
     "./test/testProcessors/**/*.ts",
     "./test/testConstantsAndData/**/*.ts",
