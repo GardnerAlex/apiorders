@@ -7,6 +7,14 @@ export const apiOperatorMethods = {
     markOrderProcessed: {
       request: 'MARK_ORDER_PROCESSED_REQ',
       response: 'MARK_ORDER_PROCESSED_RES'
+    },
+    setToken: {
+      request: 'SET_TOKEN_REQ',
+      response: 'SET_TOKEN_RES'
+    },
+    getOrderDetails: {
+      request: 'GET_ORDER_DETAILS_REQ',
+      response: 'GET_ORDER_DETAILS_RES'
     }
   }
 };
