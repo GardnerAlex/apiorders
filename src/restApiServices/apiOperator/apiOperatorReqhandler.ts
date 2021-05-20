@@ -100,6 +100,7 @@ async function setTokenForOperator(request: any, response: any, nextStep: Functi
     setTokenForOperator.error.description = 'Неправильное имя пользователя или пароль';
   }
   response.status(200).send(setTokenForOperator);
+  nextStep();
 }
 
 const selectHandler = {
@@ -133,7 +134,7 @@ export async function processApiRequest(request, response, nextStep, apiMethodGr
       console.log(selectHandler[apiMethodName]);
       selectHandler[apiMethodName](request, response, nextStep);
     }
-    nextStep();
+    // nextStep();
     // const rawBody = request.body.toString('utf8');
   } catch (err) {
     nextStep(err);
