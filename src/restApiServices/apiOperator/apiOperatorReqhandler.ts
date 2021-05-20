@@ -100,6 +100,7 @@ async function setTokenForOperator(request: any, response: any, nextStep: Functi
     setTokenForOperator.error.description = 'Неправильное имя пользователя или пароль';
   }
   response.status(200).send(setTokenForOperator);
+  //
   nextStep();
 }
 

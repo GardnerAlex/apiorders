@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78709b2b-3711-4ebb-b91f-0a62eecd21d2" name="Default Changelist" comment="">
+    <list default="true" id="78709b2b-3711-4ebb-b91f-0a62eecd21d2" name="Default Changelist" comment="fix cors2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorReqhandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorReqhandler.ts" afterDir="false" />
     </list>
@@ -132,7 +132,7 @@
       <workItem from="1620933777603" duration="6639000" />
       <workItem from="1620980468473" duration="3768000" />
       <workItem from="1620991523033" duration="13860000" />
-      <workItem from="1621241773104" duration="14473000" />
+      <workItem from="1621241773104" duration="14549000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup and testing connection">
       <created>1620634065367</created>
@@ -218,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621493444173</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix cors">
+      <created>1621494005548</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1621494005548</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,10 +252,10 @@
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
     <state x="538" y="-782" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620981978233" />
-    <state x="350" y="-911" key="CommitChangelistDialog2" timestamp="1621493444049">
+    <state x="350" y="-911" key="CommitChangelistDialog2" timestamp="1621494055129">
       <screen x="-143" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="350" y="-911" key="CommitChangelistDialog2/-143.-1057.1920.1057/0.23.1680.1027@-143.-1057.1920.1057" timestamp="1621493444049" />
+    <state x="350" y="-911" key="CommitChangelistDialog2/-143.-1057.1920.1057/0.23.1680.1027@-143.-1057.1920.1057" timestamp="1621494055129" />
     <state x="333" y="-911" key="CommitChangelistDialog2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620998438807" />
     <state x="311" y="-911" key="CommitChangelistDialog2/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716496314" />
     <state x="-60" y="-950" width="1720" height="827" key="DiffContextDialog" timestamp="1620935966636">
