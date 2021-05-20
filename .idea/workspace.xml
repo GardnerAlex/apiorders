@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="78709b2b-3711-4ebb-b91f-0a62eecd21d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorInterfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorInterfaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorMethods.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorMethods.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorReqhandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorReqhandler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/restApiServices/apiOperator/controllers/apiOperatorController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/controllers/apiOperatorController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/restApiServices/apiOperator/dbServiceApiOperator/dbConnectors/restOperator/operatorDbMethods.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/dbServiceApiOperator/dbConnectors/restOperator/operatorDbMethods.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/restApiServices/apiOperator/dbServiceApiOperator/dbOperatorInterfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/dbServiceApiOperator/dbOperatorInterfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorServer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOperator/apiOperatorServer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restApiServices/apiOrders/apiOrdersReqHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/restApiServices/apiOrders/apiOrdersReqHandler.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +134,7 @@
       <workItem from="1620933777603" duration="6639000" />
       <workItem from="1620980468473" duration="3768000" />
       <workItem from="1620991523033" duration="13860000" />
-      <workItem from="1621241773104" duration="12632000" />
+      <workItem from="1621241773104" duration="14073000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup and testing connection">
       <created>1620634065367</created>
@@ -209,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620998439088</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added operator API methods and authorisation">
+      <created>1621423627411</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1621423627411</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +226,8 @@
     <MESSAGE value="add tsconfig.json" />
     <MESSAGE value="added token validation" />
     <MESSAGE value="added operator API" />
-    <option name="LAST_COMMIT_MESSAGE" value="added operator API" />
+    <MESSAGE value="added operator API methods and authorisation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added operator API methods and authorisation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-160" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620935544188">
@@ -234,9 +239,10 @@
       <screen x="-160" y="-1057" width="1920" height="1057" />
     </state>
     <state x="538" y="-782" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620981978233" />
-    <state x="333" y="-911" key="CommitChangelistDialog2" timestamp="1620998438807">
-      <screen x="-160" y="-1057" width="1920" height="1057" />
+    <state x="350" y="-911" key="CommitChangelistDialog2" timestamp="1621423627293">
+      <screen x="-143" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="350" y="-911" key="CommitChangelistDialog2/-143.-1057.1920.1057/0.23.1680.1027@-143.-1057.1920.1057" timestamp="1621423627293" />
     <state x="333" y="-911" key="CommitChangelistDialog2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620998438807" />
     <state x="311" y="-911" key="CommitChangelistDialog2/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716496314" />
     <state x="-60" y="-950" width="1720" height="827" key="DiffContextDialog" timestamp="1620935966636">
@@ -275,9 +281,10 @@
       <screen x="-240" y="-1057" width="1920" height="1057" />
     </state>
     <state x="229" y="-875" key="SettingsEditor/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620657011017" />
-    <state x="400" y="-774" key="Vcs.Push.Dialog.v2" timestamp="1620998446119">
-      <screen x="-160" y="-1057" width="1920" height="1057" />
+    <state x="417" y="-774" key="Vcs.Push.Dialog.v2" timestamp="1621423636085">
+      <screen x="-143" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="417" y="-774" key="Vcs.Push.Dialog.v2/-143.-1057.1920.1057/0.23.1680.1027@-143.-1057.1920.1057" timestamp="1621423636085" />
     <state x="400" y="-774" key="Vcs.Push.Dialog.v2/0.23.1680.1027/-160.-1057.1920.1057@-160.-1057.1920.1057" timestamp="1620998446119" />
     <state x="320" y="-774" key="Vcs.Push.Dialog.v2/1680.-751.1920.1057/-240.-1057.1920.1057/0.23.1680.1027@-240.-1057.1920.1057" timestamp="1620716499339" />
     <state x="481" y="-888" width="637" height="610" key="find.popup" timestamp="1620981955606">

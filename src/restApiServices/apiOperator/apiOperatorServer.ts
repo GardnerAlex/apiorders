@@ -28,7 +28,6 @@ class ApiOperatorServer {
     // this.appLogger = logger.appLogger;
     this.app = express();
     this.appName = appName;
-    this.routes = routesArray;
     this.baseUrl = baseUrl;
     this.restPort = restPort;
     this.app.set('port', restPort);
@@ -36,6 +35,7 @@ class ApiOperatorServer {
     this.app.use(RequestId());
     this.app.use(express.json());
     this.app.use(cookieParser());
+    this.routes = routesArray;
     this.registerRoutes();
   }
 

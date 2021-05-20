@@ -49,6 +49,7 @@ async function sendToOperatorAndReplyToCustomer(fixedRawBody: RestOrderInterface
   nextStep();
 }
 
+// eslint-disable-next-line consistent-return
 export async function processApiRequest(request, response, nextStep, apiMethodGroup, apiMethodName): Promise<void> {
   try {
     // const rawBody = request.body.toString('utf8');
@@ -83,6 +84,7 @@ export async function processApiRequest(request, response, nextStep, apiMethodGr
     console.log('createOrderInDb', createOrderInDb);
     // если отправилось - статус 2 - получен оператором
     await sendToOperatorAndReplyToCustomer(fixedRawBody, orderId.result[0].order_id, response, nextStep);
+    nextStep();
   } catch (err) {
     nextStep(err);
   }

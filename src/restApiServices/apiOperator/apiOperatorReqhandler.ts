@@ -133,6 +133,7 @@ export async function processApiRequest(request, response, nextStep, apiMethodGr
       console.log(selectHandler[apiMethodName]);
       selectHandler[apiMethodName](request, response, nextStep);
     }
+    nextStep();
     // const rawBody = request.body.toString('utf8');
   } catch (err) {
     nextStep(err);
